@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giới thiệu - Học Thủ Ngữ</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .section {
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      .section.yellow {
+        background-color: #fff3cd;
+      }
+
+      .section.white {
+        background-color: #fff;
+      }
+
+      .section h2 {
+        color: #1976d2;
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
+
+      .section p {
+        max-width: 800px;
+        margin: auto;
+        font-size: 1.1rem;
+        line-height: 1.7;
+      }
+
+      .highlight-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 24px;
+        background-color: #1976d2;
+        color: white;
+        font-weight: bold;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .highlight-btn:hover {
+        background-color: #0d47a1;
+      }
+
+      .image-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .image-row img {
+        max-width: 100px;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .video-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        margin-top: 50px;
+      }
+
+      .video-section img {
+        width: 300px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 30px;
+        justify-items: center;
+        margin-top: 40px;
+      }
+
+      .team-member {
+        text-align: center;
+      }
+
+      .team-member img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border: 4px solid #fff;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .team-member h4 {
+        margin: 4px 0;
+        font-weight: 600;
+      }
+
+      .team-member p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      @media (max-width: 600px) {
+        .video-section {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header" class="header"></header>
+
+    <main class="main-content">
+      <!-- Giới thiệu chung -->
+      <section class="section yellow reveal-left">
+        <div class="video-section">
+          <img
+            src="../image/hoc.png"
+            alt="Học ngay"
+            style="
+              width: 380px;
+              max-width: 100%;
+              border-radius: 12px;
+              box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            "
+          />
+          <div>
+            <h2>Học Thủ Ngữ là gì?</h2>
+            <p>
+              Học Thủ Ngữ là nền tảng giáo dục miễn phí giúp mọi người tiếp cận
+              và học Ngôn ngữ Ký hiệu Việt Nam. Chúng tôi tạo ra công cụ học
+              trực quan, vui nhộn và dễ tiếp cận để kết nối cộng đồng người nghe
+              và người điếc.
+            </p>
+            <a href="index.html" class="highlight-btn">Bắt đầu ngay</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Phần video / minh họa học -->
+      <section class="section white reveal-right">
+        <div class="video-section">
+          <img
+            src="../image/speech.png"
+            alt="Demo học ký hiệu"
+            style="
+              width: 380px;
+              max-width: 100%;
+              border-radius: 12px;
+              box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            "
+          />
+          <div>
+            <h2>Chương trình học trực quan</h2>
+            <p>
+              Chúng tôi cung cấp từ vựng theo chủ đề, kèm theo hình ảnh minh họa
+              giúp bạn dễ nhớ và dễ áp dụng. Bạn có thể học mọi lúc, mọi nơi chỉ
+              với vài cú nhấp chuột.
+            </p>
+            <a href="dictionary.html" class="highlight-btn">Khám phá từ vựng</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Đội ngũ sáng lập -->
+      <section class="section yellow reveal">
+        <h2>👩‍💻 Đội ngũ sáng lập</h2>
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="../image/ttd.png" alt="Trần Tấn Đạt" />
+            <h4>Trần Tấn Đạt</h4>
+            <p>Lập trình</p>
+          </div>
+          <div class="team-member">
+            <img src="../image/tta.png" alt="Trần Tuấn Anh" />
+            <h4>Trần Tuấn Anh</h4>
+            <p>Lập trình</p>
+          </div>
+          <div class="team-member">
+            <img src="../image/hacker.jpg" alt="DVK" />
+            <h4>DVK</h4>
+            <p>Thiết Kế</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer"></footer>
+
+    <!-- Script -->
+    <script>
+      function loadComponent(id, file) {
+        fetch(file)
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById(id).innerHTML = data;
+          });
+      }
+
+      loadComponent("header", "header.html");
+      loadComponent("footer", "footer.html");
+
+      // Animation scroll
+      document.addEventListener("DOMContentLoaded", () => {
+        function revealOnScroll() {
+          const reveals = document.querySelectorAll(
+            ".reveal, .reveal-left, .reveal-right"
+          );
+          const windowHeight = window.innerHeight;
+
+          reveals.forEach((el) => {
+            const top = el.getBoundingClientRect().top;
+            if (top < windowHeight - 50) {
+              el.classList.add("active");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+        revealOnScroll();
+      });
+    </script>
+  </body>
+</html>

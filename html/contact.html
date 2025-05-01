@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liên hệ - Học Thủ Ngữ</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .contact-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 40px 20px;
+      }
+
+      .contact-form {
+        flex: 1;
+        min-width: 300px;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      }
+
+      .contact-form h2 {
+        margin-bottom: 20px;
+        color: #1976d2;
+      }
+
+      .contact-form label {
+        display: block;
+        margin-top: 12px;
+        font-weight: 500;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-top: 6px;
+        font-size: 1rem;
+      }
+
+      .contact-form textarea {
+        resize: vertical;
+        height: 120px;
+      }
+
+      .contact-form button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #1976d2;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .contact-form button:hover {
+        background: #0d47a1;
+      }
+
+      .contact-info {
+        flex: 1;
+        min-width: 250px;
+        background: #f9f9f9;
+        padding: 20px 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      }
+
+      .contact-info h3 {
+        color: #1976d2;
+        margin-bottom: 16px;
+      }
+
+      .contact-info p {
+        margin: 8px 0;
+        font-size: 1rem;
+      }
+
+      .contact-info i {
+        margin-right: 8px;
+        color: #1976d2;
+      }
+
+      .contact-image-container {
+        width: 100%;
+        text-align: center;
+        margin-top: 60px;
+      }
+
+      .contact-image-container img {
+        max-width: 500px;
+        width: 90%;
+        border-radius: 16px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .intro-box {
+        max-width: 700px;
+        margin: 0 auto 40px;
+        background: #f0f8ff;
+        padding: 20px 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        font-size: 1.05rem;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .contact-wrapper {
+          flex-direction: column;
+        }
+
+        .contact-image-container img {
+          max-width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header" class="header"></header>
+
+    <main class="main-content">
+      <section class="container reveal">
+        <h1 style="color: #1976d2; margin-bottom: 10px">
+          📬 Liên hệ với chúng tôi
+        </h1>
+        <div class="intro-box">
+          💌Nếu bạn có bất kỳ thắc mắc, góp ý hay yêu cầu nào, vui lòng gửi tin
+          nhắn cho chúng tôi.<br />
+          <strong>Chúng tôi rất mong nhận được phản hồi từ bạn.</strong>
+        </div>
+
+        <div class="contact-wrapper">
+          <!-- FORM -->
+          <div class="contact-form">
+            <h2>Gửi tin nhắn</h2>
+            <form>
+              <label for="name">Họ và tên</label>
+              <input type="text" id="name" placeholder="Nhập họ tên" required />
+
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="you@example.com"
+                required
+              />
+
+              <label for="subject">Chủ đề</label>
+              <input
+                type="text"
+                id="subject"
+                placeholder="VD: Góp ý trang web"
+                required
+              />
+
+              <label for="message">Nội dung</label>
+              <textarea
+                id="message"
+                placeholder="Viết tin nhắn của bạn..."
+                required
+              ></textarea>
+
+              <button type="submit">Gửi liên hệ</button>
+            </form>
+          </div>
+
+          <!-- THÔNG TIN -->
+          <div class="contact-info">
+            <h3>📍 Thông tin liên hệ</h3>
+            <p><i>📧</i> Email: <a href="mailto:trantandat@gmail.com">trantandat@gmail.com</a></p>
+            <p><i>📞</i> Điện thoại: 0919999888</p>
+            <p><i>🏢</i> Địa chỉ: Lanmark 81, TP.HCM</p>
+            <p><i>🌐</i> Website: <a href="#">websign-language</a></p>
+          
+            <!-- Ảnh trong box -->
+            <div class="contact-box-image">
+              <img src="../image/have.png" alt="Liên hệ minh họa" />
+            </div>
+          </div>
+          
+    </main>
+
+    <footer id="footer" class="footer"></footer>
+
+    <script>
+      function loadComponent(id, file) {
+        fetch(file)
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById(id).innerHTML = data;
+          });
+      }
+
+      loadComponent("header", "header.html");
+      loadComponent("footer", "footer.html");
+
+      // Scroll animation
+      document.addEventListener("DOMContentLoaded", () => {
+        function revealOnScroll() {
+          const reveals = document.querySelectorAll(".reveal");
+          const windowHeight = window.innerHeight;
+
+          reveals.forEach((el) => {
+            const top = el.getBoundingClientRect().top;
+            if (top < windowHeight - 50) {
+              el.classList.add("active");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", revealOnScroll);
+        window.addEventListener("load", revealOnScroll);
+        revealOnScroll();
+      });
+    </script>
+  </body>
+</html>

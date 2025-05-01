@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Từ điển - Học Thủ Ngữ</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header class="header" id="header"></header>
+
+    <main class="main-content">
+      <div class="container layout">
+        <section class="content fade-in">
+          <h1>Từ điển</h1>
+          <p>
+            Tra cứu từ thủ ngữ có hình ảnh, video minh họa và phân loại theo chủ
+            đề.
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer" id="footer"></footer>
+
+    <script>
+      function loadComponent(id, file) {
+        fetch(file)
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById(id).innerHTML = data;
+          });
+      }
+      loadComponent("header", "header.html");
+      loadComponent("footer", "footer.html");
+    </script>
+  </body>
+</html>

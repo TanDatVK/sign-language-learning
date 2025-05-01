@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Học Thủ Ngữ</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header" id="header"></header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <div class="container layout">
+        <aside class="sidebar">
+          <h2>📚 Chủ đề</h2>
+          <ul id="topic-list">
+            <li onclick="changeTopic('greetings')">👋 Chào hỏi</li>
+            <li onclick="changeTopic('numbers')">🔢 Số đếm</li>
+            <li onclick="changeTopic('colors')">🎨 Màu sắc</li>
+            <li onclick="changeTopic('feelings')">😊 Cảm xúc</li>
+            <li onclick="changeTopic('family')">👨‍👩‍👧‍👦 Gia đình</li>
+            <li onclick="changeTopic('school')">🏫 Trường học</li>
+          </ul>
+        </aside>
+        <section class="content">
+          <h1 id="topic-title" class="fade-in">Chào hỏi</h1>
+          <div id="card-container" class="card-grid"></div>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer"></footer>
+
+    <!-- SCRIPT -->
+    <script src="../js/script.js"></script>
+    <script>
+      function loadComponent(id, file) {
+        fetch(file)
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById(id).innerHTML = data;
+          })
+          .catch((err) => console.error("Lỗi khi tải " + file, err));
+      }
+
+      loadComponent("header", "header.html");
+      loadComponent("footer", "footer.html");
+    </script>
+  </body>
+</html>

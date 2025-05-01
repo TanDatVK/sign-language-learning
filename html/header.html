@@ -1,0 +1,38 @@
+<div class="container header-container">
+  <!-- Logo + Tên -->
+  <div class="logo" style="display: flex; align-items: center; gap: 10px">
+    <img src="../image/logo.png" alt="Logo" style="height: 40px" />
+    <span style="font-size: 1.5rem; font-weight: bold">SIGN - LANGUAGE</span>
+  </div>
+
+  <!-- Menu điều hướng -->
+  <nav class="nav">
+    <a href="index.html">Trang chủ</a>
+    <a href="dictionary.html">Từ điển</a>
+    <a href="lessons.html">Bài học</a>
+    <a href="about.html">Về chúng tôi</a>
+    <a href="contact.html">Liên hệ</a>
+  </nav>
+
+  <!-- Hành động -->
+  <div class="actions">
+    <button class="btn" onclick="location.href='login.html'">Đăng nhập</button>
+    <button class="btn" onclick="location.href='register.html'">Đăng ký</button>
+
+    <!-- Cài đặt -->
+    <div class="settings-dropdown">
+      <button class="settings-btn" id="settingsToggle">⚙️ Cài đặt</button>
+      <div class="settings-menu" id="settingsMenu">
+        <label>
+          🌐 Ngôn ngữ:
+          <select id="langSelect">
+            <option value="vi">🇻🇳 Tiếng Việt</option>
+            <option value="en">🇺🇸 English</option>
+          </select>
+        </label>
+        <hr />
+        <button id="logoutBtn">🚪 Đăng xuất</button>
+      </div>
+    </div>
+  </div>
+</div>
