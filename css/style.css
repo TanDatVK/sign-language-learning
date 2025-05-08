@@ -208,6 +208,7 @@ body {
   margin-bottom: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
 .intro-box {
   max-width: 800px;
   margin: 30px auto 40px;
@@ -1111,7 +1112,7 @@ h1 {
 /* CSS cho khung chứa videovideo với tên lớp videoquiz */
 .videoquiz {
   width: 100%;
-  max-width: 600px;
+  max-width: 500px;
   margin: 20px auto;
   padding: 15px;
   border: 5px solid #007bff; /* Đường viền màu xanh dương */
@@ -1125,4 +1126,78 @@ h1 {
   width: 100%;
   height: auto;
   border-radius: 8px; /* Bo góc cho ảnh GIF */
+}
+/* Trạng thái bài học */
+.lesson-card .status {
+  font-size: 1rem;
+  color: #888;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: right; /* Căn phải cho trạng thái */
+  display: inline-block; /* Làm cho nó nằm ngang với các phần khác */
+  width: 35%; /* Đặt chiều rộng để nó không chiếm quá nhiều không gian */
+}
+
+/* Trạng thái bài học */
+.lesson-card .status {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: right; /* Căn phải cho trạng thái */
+  display: inline-block; /* Làm cho nó nằm ngang với các phần khác */
+  width: 35%; /* Đặt chiều rộng để nó không chiếm quá nhiều không gian */
+  color: #888; /* Mặc định là màu xám cho trạng thái */
+}
+
+/* Trạng thái "Đang học" */
+.lesson-card[data-status="in-progress"] .status {
+  color: #fbc02d; /* Màu vàng cho trạng thái đang học */
+}
+
+/* Trạng thái "Hoàn thành" */
+.lesson-card[data-status="completed"] .status {
+  color: #388e3c; /* Màu xanh cho trạng thái đã hoàn thành */
+}
+
+/* Trạng thái "Chưa hoàn thành" */
+.lesson-card[data-status="not-started"] .status {
+  color: #d32f2f; /* Màu đỏ cho trạng thái chưa hoàn thành */
+}
+
+/* Bố cục cho bài học và trạng thái */
+.lesson-card {
+  display: flex;
+  justify-content: space-between; /* Để các phần tử được sắp xếp ngang hàng */
+  align-items: center;
+  flex-wrap: wrap; /* Đảm bảo các phần tử không bị tràn ra ngoài */
+  gap: 10px;
+}
+
+.lesson-card .btn {
+  margin-top: 14px;
+  display: inline-block;
+  padding: 8px 16px;
+  background: #1976d2;
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.lesson-card .btn:hover {
+  background: #0d47a1;
+}
+
+/* Thêm khoảng cách giữa các bài học */
+.lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.lesson-card .status,
+.lesson-card .btn {
+  align-self: center; /* Căn giữa dọc trong container */
 }
