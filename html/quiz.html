@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz - Học Thủ Ngữ</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header id="header" class="header"></header>
+
+    <main class="main-content">
+      <section class="container quiz-container">
+        <h2>📋 Đây là video mô tả chữ cái gì</h2>
+        <p>Hãy chọn một câu trả lời đúng dưới đây:</p>
+
+        <!-- Thêm GIF dưới câu hỏi -->
+        <div class="videoquiz">
+          <img src="../image/f.gif" alt="Mô tả video" />
+        </div>
+        <!-- Các câu trả lời ABCD -->
+        <div class="answer-options">
+          <div class="answer-option" id="A">
+            <label for="answerA"> A. Giúp người khiếm thị giao tiếp </label>
+            <input type="radio" id="answerA" name="answer" value="1" />
+          </div>
+
+          <div class="answer-option" id="B">
+            <label for="answerB"> B. Giúp người khiếm thính giao tiếp </label>
+            <input type="radio" id="answerB" name="answer" value="2" />
+          </div>
+
+          <div class="answer-option" id="C">
+            <label for="answerC"> C. Học ngôn ngữ cho người nói </label>
+            <input type="radio" id="answerC" name="answer" value="3" />
+          </div>
+
+          <div class="answer-option" id="D">
+            <label for="answerD"> D. Giúp mọi người học tiếng Anh </label>
+            <input type="radio" id="answerD" name="answer" value="4" />
+          </div>
+        </div>
+
+        <!-- Nút gửi câu trả lời -->
+        <button class="quiz-button" onclick="checkAnswer()">
+          Gửi câu trả lời
+        </button>
+
+        <!-- Kết quả trả lời -->
+        <div id="resultMessage" class="message-box"></div>
+
+        <!-- Thông báo xác nhận -->
+        <div id="confirmMessage">
+          <img src="../image/lac.gif" alt="Xác nhận" />
+          <p>Bạn có chắc chắn chọn câu trả lời này?</p>
+          <button onclick="confirmAnswer(true)">Có, tôi chắc chắn</button>
+          <button onclick="confirmAnswer(false)">Không, chọn lại</button>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer"></footer>
+
+    <script src="../js/script.js"></script>
+
+    <script>
+      const correctAnswer = "2"; // Đáp án đúng
+
+      function checkAnswer() {
+        const selectedAnswer = document.querySelector(
+          'input[name="answer"]:checked'
+        );
+        const resultMessage = document.getElementById("resultMessage");
+
+        if (!selectedAnswer) {
+          alert("Vui lòng chọn một câu trả lời.");
+          return;
+        }
+
+        const answerValue = selectedAnswer.value;
+
+        // Hiển thị thông báo xác nhận
+        document.getElementById("confirmMessage").style.display = "flex";
+        document
+          .getElementById("confirmMessage")
+          .setAttribute("data-answer", answerValue);
+      }
+
+      function confirmAnswer(isConfirmed) {
+        const resultMessage = document.getElementById("resultMessage");
+        const selectedAnswer = document
+          .getElementById("confirmMessage")
+          .getAttribute("data-answer");
+
+        if (isConfirmed) {
+          if (selectedAnswer === correctAnswer) {
+            resultMessage.innerHTML = "Chúc mừng bạn đã trả lời đúng!";
+            resultMessage.classList.add("correct");
+            resultMessage.classList.remove("incorrect");
+          } else {
+            resultMessage.innerHTML = "Rất tiếc, câu trả lời của bạn sai.";
+            resultMessage.classList.add("incorrect");
+            resultMessage.classList.remove("correct");
+          }
+          document.getElementById("confirmMessage").style.display = "none"; // Ẩn thông báo xác nhận
+        } else {
+          document.getElementById("confirmMessage").style.display = "none"; // Ẩn thông báo xác nhận
+        }
+      }
+    </script>
+  </body>
+</html>

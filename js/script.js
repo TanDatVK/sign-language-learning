@@ -6,7 +6,18 @@ const signs = {
   family: [{ word: "Mẹ" }, { word: "Anh trai" }],
   school: [{ word: "Giáo viên" }, { word: "Bảng đen" }],
 };
+function loadComponent(id, file) {
+  fetch(file)
+    .then((res) => res.text())
+    .then((data) => {
+      document.getElementById(id).innerHTML = data;
+    })
+    .catch((err) => console.error("Lỗi khi tải " + file, err));
+}
+loadComponent("header", "header.html");
+loadComponent("footer", "footer.html");
 
+// Render danh sách từ vựng
 function renderCards(topic) {
   const container = document.getElementById("card-container");
   container.innerHTML = "";
@@ -19,13 +30,12 @@ function renderCards(topic) {
   signs[topic].forEach((sign) => {
     const card = document.createElement("div");
     card.className = "card";
-    card.innerHTML = `
-      <p style="font-size: 1.2rem; font-weight: bold;">${sign.word}</p>
-    `;
+    card.innerHTML = `<p style="font-size: 1.2rem; font-weight: bold;">${sign.word}</p>`;
     container.appendChild(card);
   });
 }
 
+// Thay đổi chủ đề
 function changeTopic(topic) {
   const topicName =
     {
@@ -42,76 +52,45 @@ function changeTopic(topic) {
 }
 
 renderCards("greetings");
+
+// Xử lý đăng nhập
 function handleLogin() {
   const user = { name: "Nguyễn Văn A" };
   localStorage.setItem("user", JSON.stringify(user));
   window.location.href = "index.html";
 }
-document.addEventListener("DOMContentLoaded", () => {
-  const settingsBtn = document.getElementById("settingsToggle");
-  const settingsMenu = document.getElementById("settingsMenu");
+let currentLang = "vi";
 
-  settingsBtn.addEventListener("click", (e) => {
-    e.stopPropagation(); // tránh đóng ngay khi mở
-    settingsMenu.classList.toggle("show");
+function toggleLanguage() {
+  const langBtn = document.getElementById("langToggleBtn");
+
+  currentLang = currentLang === "vi" ? "en" : "vi";
+  langBtn.textContent = currentLang === "vi" ? "🌐 Tiếng Việt" : "🌐 English";
+
+  // Cập nhật nội dung trang
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    el.textContent = translations[currentLang][key];
   });
+}
 
-  document.addEventListener("click", (e) => {
-    if (!settingsMenu.contains(e.target) && !settingsBtn.contains(e.target)) {
-      settingsMenu.classList.remove("show");
-    }
-  });
-
-  // Ngôn ngữ
-  const langSelect = document.getElementById("langSelect");
-  if (langSelect) {
-    langSelect.value = localStorage.getItem("lang") || "vi";
-    langSelect.addEventListener("change", (e) => {
-      localStorage.setItem("lang", e.target.value);
-      location.reload();
-    });
-  }
-
-  // Đăng xuất
-  const logoutBtn = document.getElementById("logoutBtn");
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", () => {
-      if (confirm("Bạn có chắc chắn muốn đăng xuất?")) {
-        localStorage.removeItem("user");
-        location.href = "login.html";
-      }
-    });
-  }
-});
-document.addEventListener("DOMContentLoaded", () => {
-  const settingsBtn = document.getElementById("settingsToggle");
-  const settingsMenu = document.getElementById("settingsMenu");
-
-  settingsBtn?.addEventListener("click", (e) => {
-    e.stopPropagation();
-    settingsMenu.classList.toggle("show");
-  });
-
-  document.addEventListener("click", (e) => {
-    if (!settingsMenu.contains(e.target) && !settingsBtn.contains(e.target)) {
-      settingsMenu.classList.remove("show");
-    }
-  });
-
-  const langSelect = document.getElementById("langSelect");
-  if (langSelect) {
-    langSelect.value = localStorage.getItem("lang") || "vi";
-    langSelect.addEventListener("change", (e) => {
-      localStorage.setItem("lang", e.target.value);
-      location.reload();
-    });
-  }
-
-  const logoutBtn = document.getElementById("logoutBtn");
-  logoutBtn?.addEventListener("click", () => {
-    if (confirm("Bạn có chắc muốn đăng xuất?")) {
-      localStorage.removeItem("user");
-      location.href = "login.html";
-    }
-  });
-});
+const translations = {
+  vi: {
+    home: "Trang chủ",
+    dictionary: "Từ điển",
+    lessons: "Bài học",
+    about: "Về chúng tôi",
+    contact: "Liên hệ",
+    login: "Đăng nhập",
+    register: "Đăng ký",
+  },
+  en: {
+    home: "Home",
+    dictionary: "Dictionary",
+    lessons: "Lessons",
+    about: "About Us",
+    contact: "Contact",
+    login: "Login",
+    register: "Sign Up",
+  },
+};

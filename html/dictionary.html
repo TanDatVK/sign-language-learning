@@ -8,11 +8,10 @@
   </head>
   <body>
     <header class="header" id="header"></header>
-
     <main class="main-content">
       <div class="container layout">
         <section class="content fade-in">
-          <h1>Từ điển</h1>
+          <h1>🔍Từ điển</h1>
           <p>
             Tra cứu từ thủ ngữ có hình ảnh, video minh họa và phân loại theo chủ
             đề.
@@ -22,17 +21,7 @@
     </main>
 
     <footer class="footer" id="footer"></footer>
-
-    <script>
-      function loadComponent(id, file) {
-        fetch(file)
-          .then((res) => res.text())
-          .then((data) => {
-            document.getElementById(id).innerHTML = data;
-          });
-      }
-      loadComponent("header", "header.html");
-      loadComponent("footer", "footer.html");
-    </script>
+    <!-- SCRIPT -->
+    <script src="../js/script.js"></script>
   </body>
 </html>

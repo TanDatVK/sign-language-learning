@@ -36,18 +36,5 @@
 
     <!-- SCRIPT -->
     <script src="../js/script.js"></script>
-    <script>
-      function loadComponent(id, file) {
-        fetch(file)
-          .then((res) => res.text())
-          .then((data) => {
-            document.getElementById(id).innerHTML = data;
-          })
-          .catch((err) => console.error("Lỗi khi tải " + file, err));
-      }
-
-      loadComponent("header", "header.html");
-      loadComponent("footer", "footer.html");
-    </script>
   </body>
 </html>

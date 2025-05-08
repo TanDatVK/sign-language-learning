@@ -4,35 +4,75 @@
     <img src="../image/logo.png" alt="Logo" style="height: 40px" />
     <span style="font-size: 1.5rem; font-weight: bold">SIGN - LANGUAGE</span>
   </div>
-
+  <style>
+    /* HEADER */
+    .header {
+      background-color: #1976d2;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    .nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+    }
+    .nav a:hover {
+      text-decoration: underline;
+    }
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .actions button {
+      background: white;
+      color: #1976d2;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .actions button:hover {
+      background: #e3f2fd;
+    }
+    .actions select {
+      padding: 6px;
+      border-radius: 6px;
+      border: none;
+      font-size: 0.9rem;
+    }
+  </style>
   <!-- Menu điều hướng -->
   <nav class="nav">
-    <a href="index.html">Trang chủ</a>
-    <a href="dictionary.html">Từ điển</a>
-    <a href="lessons.html">Bài học</a>
-    <a href="about.html">Về chúng tôi</a>
-    <a href="contact.html">Liên hệ</a>
+    <a href="index.html" data-i18n="home">Trang chủ</a>
+    <a href="dictionary.html" data-i18n="dictionary">Từ điển</a>
+    <a href="lessons.html" data-i18n="lessons">Bài học</a>
+    <a href="about.html" data-i18n="about">Về chúng tôi</a>
+    <a href="contact.html" data-i18n="contact">Liên hệ</a>
   </nav>
-
-  <!-- Hành động -->
+  
   <div class="actions">
-    <button class="btn" onclick="location.href='login.html'">Đăng nhập</button>
-    <button class="btn" onclick="location.href='register.html'">Đăng ký</button>
-
-    <!-- Cài đặt -->
-    <div class="settings-dropdown">
-      <button class="settings-btn" id="settingsToggle">⚙️ Cài đặt</button>
-      <div class="settings-menu" id="settingsMenu">
-        <label>
-          🌐 Ngôn ngữ:
-          <select id="langSelect">
-            <option value="vi">🇻🇳 Tiếng Việt</option>
-            <option value="en">🇺🇸 English</option>
-          </select>
-        </label>
-        <hr />
-        <button id="logoutBtn">🚪 Đăng xuất</button>
-      </div>
-    </div>
+    <button class="btn" onclick="location.href='login.html'" data-i18n="login">Đăng nhập</button>
+    <button class="btn" onclick="location.href='register.html'" data-i18n="register">Đăng ký</button>
+    <button class="btn" id="langToggleBtn" onclick="toggleLanguage()">🌐 Tiếng Việt</button>
+  </div>
+  
   </div>
 </div>
+<script src="../js/script.js"></script>

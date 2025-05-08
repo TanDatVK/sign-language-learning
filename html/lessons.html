@@ -5,61 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bài học - Học Thủ Ngữ</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <style>
-      .lessons-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 24px;
-        margin-top: 40px;
-      }
-
-      .lesson-card {
-        background: #ffffff;
-        border-radius: 12px;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-        padding: 20px;
-        transition: transform 0.3s, box-shadow 0.3s;
-        animation: fadeInUp 0.6s ease;
-      }
-
-      .lesson-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-      }
-
-      .lesson-card h3 {
-        margin-bottom: 10px;
-        color: #1976d2;
-      }
-
-      .lesson-card p {
-        font-size: 0.95rem;
-        color: #555;
-      }
-
-      .lesson-card .btn {
-        margin-top: 14px;
-        display: inline-block;
-        padding: 8px 16px;
-        background: #1976d2;
-        color: white;
-        border-radius: 8px;
-        font-weight: 500;
-        text-decoration: none;
-        transition: background 0.3s;
-      }
-
-      .lesson-card .btn:hover {
-        background: #0d47a1;
-      }
-    </style>
   </head>
   <body>
     <header class="header" id="header"></header>
 
     <main class="main-content">
       <section class="container reveal">
-        <h1 style="color: #1976d2; margin-bottom: 10px">📘 Các bài học</h1>
+        <h1>📘Các bài học</h1>
         <div class="intro-box reveal">
           <h2>🚀 Bắt đầu hành trình của bạn</h2>
           <p>
@@ -70,124 +22,101 @@
         </div>
 
         <div class="lessons-grid">
-          <div class="lessons-grid">
-            <div class="lesson-card">
-              <img src="../image/hi.png" alt="Chào hỏi" class="lesson-thumb" />
-              <h3>Bài 1: Chào hỏi</h3>
-              <p>Học cách chào hỏi, giới thiệu bản thân bằng thủ ngữ.</p>
-              <a href="lesson1.html" class="btn">Bắt đầu</a>
-            </div>
-
-            <div class="lesson-card">
-              <img
-                src="../image/number.png"
-                alt="Số đếm"
-                class="lesson-thumb"
-              />
-              <h3>Bài 2: Số đếm</h3>
-              <p>Làm quen với số từ 1 đến 10 qua ngôn ngữ ký hiệu.</p>
-              <a href="lesson2.html" class="btn">Bắt đầu</a>
-            </div>
-
-            <div class="lesson-card">
-              <img
-                src="../image/color.png"
-                alt="Màu sắc"
-                class="lesson-thumb"
-              />
-              <h3>Bài 3: Màu sắc</h3>
-              <p>Ghi nhớ các màu sắc thông dụng và cách thể hiện bằng tay.</p>
-              <a href="lesson3.html" class="btn">Bắt đầu</a>
-            </div>
-
-            <div class="lesson-card">
-              <img
-                src="../image/family.png"
-                alt="Gia đình"
-                class="lesson-thumb"
-              />
-              <h3>Bài 4: Gia đình</h3>
-              <p>Biểu đạt các thành viên trong gia đình bằng thủ ngữ.</p>
-              <a href="lesson4.html" class="btn">Bắt đầu</a>
-            </div>
-
-            <div class="lesson-card">
-              <img
-                src="../image/day.png"
-                alt="Ngày & Tháng"
-                class="lesson-thumb"
-              />
-              <h3>Bài 5: Ngày & Tháng</h3>
-              <p>Diễn đạt thời gian cơ bản như ngày, tháng.</p>
-              <a href="lesson5.html" class="btn">Bắt đầu</a>
-            </div>
-
-            <div class="lesson-card">
-              <img
-                src="../image/emote.png"
-                alt="Cảm xúc"
-                class="lesson-thumb"
-              />
-              <h3>Bài 6: Cảm xúc</h3>
-              <p>
-                Thể hiện cảm xúc như vui, buồn, tức giận bằng ngôn ngữ ký hiệu.
-              </p>
-              <a href="lesson6.html" class="btn">Bắt đầu</a>
-            </div>
-
-            <div class="lesson-card">
-              <img
-                src="../image/verb.png"
-                alt="Động từ cơ bản"
-                class="lesson-thumb"
-              />
-              <h3>Bài 7: Động từ cơ bản</h3>
-              <p>Làm quen với các động từ như đi, ăn, ngủ, làm,...</p>
-              <a href="lesson7.html" class="btn">Bắt đầu</a>
-            </div>
-
-            <div class="lesson-card">
-              <img
-                src="../image/weather.png"
-                alt="Thời tiết"
-                class="lesson-thumb"
-              />
-              <h3>Bài 8: Thời tiết</h3>
-              <p>Học từ vựng liên quan đến nắng, mưa, gió, lạnh,...</p>
-              <a href="lesson8.html" class="btn">Bắt đầu</a>
-            </div>
-
-            <div class="lesson-card">
-              <img
-                src="../image/school.png"
-                alt="Trường học"
-                class="lesson-thumb"
-              />
-              <h3>Bài 9: Trường học</h3>
-              <p>Các từ vựng về lớp học, thầy cô, bạn bè.</p>
-              <a href="lesson9.html" class="btn">Bắt đầu</a>
-            </div>
+          <div class="lesson-card">
+            <img src="../image/hi.png" alt="Chào hỏi" class="lesson-thumb" />
+            <h3>Bài 1: Chào hỏi</h3>
+            <p>Học cách chào hỏi, giới thiệu bản thân bằng thủ ngữ.</p>
+            <a href="learn.html" class="btn">Bắt đầu</a>
           </div>
 
-          <!-- Bạn có thể thêm nhiều bài học hơn nữa -->
+          <div class="lesson-card">
+            <img src="../image/number.png" alt="Số đếm" class="lesson-thumb" />
+            <h3>Bài 2: Số đếm</h3>
+            <p>Làm quen với số từ 1 đến 10 qua ngôn ngữ ký hiệu.</p>
+            <a href="learn.html" class="btn">Bắt đầu</a>
+          </div>
+
+          <div class="lesson-card">
+            <img src="../image/color.png" alt="Màu sắc" class="lesson-thumb" />
+            <h3>Bài 3: Màu sắc</h3>
+            <p>Ghi nhớ các màu sắc thông dụng và cách thể hiện bằng tay.</p>
+            <a href="learn.html" class="btn">Bắt đầu</a>
+          </div>
+
+          <div class="lesson-card">
+            <img
+              src="../image/family.png"
+              alt="Gia đình"
+              class="lesson-thumb"
+            />
+            <h3>Bài 4: Gia đình</h3>
+            <p>Biểu đạt các thành viên trong gia đình bằng thủ ngữ.</p>
+            <a href="learn.html" class="btn">Bắt đầu</a>
+          </div>
+
+          <div class="lesson-card">
+            <img
+              src="../image/day.png"
+              alt="Ngày & Tháng"
+              class="lesson-thumb"
+            />
+            <h3>Bài 5: Ngày & Tháng</h3>
+            <p>Diễn đạt thời gian cơ bản như ngày, tháng.</p>
+            <a href="learn.html" class="btn">Bắt đầu</a>
+          </div>
+
+          <div class="lesson-card">
+            <img src="../image/emote.png" alt="Cảm xúc" class="lesson-thumb" />
+            <h3>Bài 6: Cảm xúc</h3>
+            <p>
+              Thể hiện cảm xúc như vui, buồn, tức giận bằng ngôn ngữ ký hiệu.
+            </p>
+            <a href="learn.html" class="btn">Bắt đầu</a>
+          </div>
+
+          <div class="lesson-card">
+            <img
+              src="../image/verb.png"
+              alt="Động từ cơ bản"
+              class="lesson-thumb"
+            />
+            <h3>Bài 7: Động từ cơ bản</h3>
+            <p>Làm quen với các động từ như đi, ăn, ngủ, làm,...</p>
+            <a href="learn.html" class="btn">Bắt đầu</a>
+          </div>
+
+          <div class="lesson-card">
+            <img
+              src="../image/weather.png"
+              alt="Thời tiết"
+              class="lesson-thumb"
+            />
+            <h3>Bài 8: Thời tiết</h3>
+            <p>Học từ vựng liên quan đến nắng, mưa, gió, lạnh,...</p>
+            <a href="learn.html" class="btn">Bắt đầu</a>
+          </div>
+
+          <div class="lesson-card">
+            <img
+              src="../image/school.png"
+              alt="Trường học"
+              class="lesson-thumb"
+            />
+            <h3>Bài 9: Trường học</h3>
+            <p>Các từ vựng về lớp học, thầy cô, bạn bè.</p>
+            <a href="learn.html" class="btn">Bắt đầu</a>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="footer" id="footer"></footer>
+    <!-- FOOTER -->
+    <footer class="footer" id="footer"></footer>
 
+    <!-- SCRIPT -->
+    <script src="../js/script.js"></script>
     <script>
-      function loadComponent(id, file) {
-        fetch(file)
-          .then((res) => res.text())
-          .then((data) => {
-            document.getElementById(id).innerHTML = data;
-          });
-      }
-
-      loadComponent("header", "header.html");
-      loadComponent("footer", "footer.html");
-
       // Scroll animation
       document.addEventListener("DOMContentLoaded", () => {
         function revealOnScroll() {

@@ -5,89 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Đăng nhập - Học Thủ Ngữ</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <style>
-      body {
-        background: linear-gradient(to right, #e3f2fd, #ffffff);
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .main-content {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .auth-container {
-        max-width: 400px;
-        width: 100%;
-        background: white;
-        padding: 40px 30px;
-        border-radius: 16px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-        animation: fadeInUp 0.6s ease;
-      }
-
-      .auth-container h2 {
-        text-align: center;
-        margin-bottom: 24px;
-        font-size: 1.8rem;
-        color: #1976d2;
-      }
-
-      .auth-container input {
-        width: 100%;
-        padding: 12px;
-        margin: 12px 0;
-        border-radius: 10px;
-        border: 1px solid #ccc;
-        font-size: 1rem;
-        transition: border-color 0.3s;
-      }
-
-      .auth-container input:focus {
-        outline: none;
-        border-color: #1976d2;
-        box-shadow: 0 0 6px rgba(25, 118, 210, 0.3);
-      }
-
-      .auth-container button {
-        width: 100%;
-        padding: 12px;
-        background: #1976d2;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        font-weight: bold;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background 0.3s;
-        margin-top: 10px;
-      }
-
-      .auth-container button:hover {
-        background: #0d47a1;
-      }
-
-      .auth-container a {
-        display: block;
-        text-align: center;
-        margin-top: 14px;
-        color: #1976d2;
-        text-decoration: none;
-        font-weight: 500;
-      }
-
-      .auth-container a:hover {
-        text-decoration: underline;
-      }
-    </style>
   </head>
   <body>
     <header id="header" class="header"></header>
-
     <main class="main-content">
       <div class="auth-container reveal">
         <h2>🔐 Đăng nhập</h2>
@@ -100,19 +20,8 @@
     </main>
 
     <footer id="footer" class="footer"></footer>
-
+    <script src="../js/script.js"></script>
     <script>
-      function loadComponent(id, file) {
-        fetch(file)
-          .then((res) => res.text())
-          .then((data) => {
-            document.getElementById(id).innerHTML = data;
-          });
-      }
-
-      loadComponent("header", "header.html");
-      loadComponent("footer", "footer.html");
-
       // Hiệu ứng hiện
       document.addEventListener("DOMContentLoaded", () => {
         document.querySelector(".reveal").classList.add("active");
