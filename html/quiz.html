@@ -16,27 +16,31 @@
 
         <!-- Thêm GIF dưới câu hỏi -->
         <div class="videoquiz">
-          <img src="../image/f.gif" alt="Mô tả video" />
+          <video controls style="width: 50%; max-width: 1000px; height: auto">
+            <source src="../video/SAC039.mp4" type="video/mp4" />
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+          </video>
         </div>
+
         <!-- Các câu trả lời ABCD -->
         <div class="answer-options">
           <div class="answer-option" id="A">
-            <label for="answerA"> A. Giúp người khiếm thị giao tiếp </label>
+            <label for="answerA"> A. Dấu Sắc </label>
             <input type="radio" id="answerA" name="answer" value="1" />
           </div>
 
           <div class="answer-option" id="B">
-            <label for="answerB"> B. Giúp người khiếm thính giao tiếp </label>
+            <label for="answerB"> B. Dấu Huyền </label>
             <input type="radio" id="answerB" name="answer" value="2" />
           </div>
 
           <div class="answer-option" id="C">
-            <label for="answerC"> C. Học ngôn ngữ cho người nói </label>
+            <label for="answerC"> C. Dấu Ngã </label>
             <input type="radio" id="answerC" name="answer" value="3" />
           </div>
 
           <div class="answer-option" id="D">
-            <label for="answerD"> D. Giúp mọi người học tiếng Anh </label>
+            <label for="answerD"> D. Dấu Hỏi </label>
             <input type="radio" id="answerD" name="answer" value="4" />
           </div>
         </div>
@@ -64,7 +68,7 @@
     <script src="../js/script.js"></script>
 
     <script>
-      const correctAnswer = "2"; // Đáp án đúng
+      const correctAnswer = "1"; // Đáp án đúng
 
       function checkAnswer() {
         const selectedAnswer = document.querySelector(
