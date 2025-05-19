@@ -3,25 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Từ điển - Học Thủ Ngữ</title>
     <link rel="stylesheet" href="../css/style.css" />
+    <title>Từ điển - Học Thủ Ngữ</title>
   </head>
   <body>
     <header class="header" id="header"></header>
+
     <main class="main-content">
-      <div class="container layout">
-        <section class="content fade-in">
-          <h1>🔍Từ điển</h1>
-          <p>
-            Tra cứu từ thủ ngữ có hình ảnh, video minh họa và phân loại theo chủ
-            đề.
-          </p>
-        </section>
+      <div class="container fade-in">
+        <h1>🔍 Từ điển Thủ Ngữ</h1>
+        <div class="intro-box">
+          💌Tra cứu từ vựng bằng thủ ngữ kèm video minh họa sinh động học hỏi từ
+          các video bổ sung kiến thức cho bản thân.<br />
+          <strong>Chúc các bạn có thời gian học tập vui vẻ.</strong>
+        </div>
+        <div class="search-box">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Tìm kiếm từ thủ ngữ..."
+          />
+        </div>
+
+        <div class="dictionary-layout">
+          <aside class="filter-tags">
+            <h3>📂 Chủ đề</h3>
+            <ul id="filterList">
+              <li data-topic="all">🧹 Hiện tất cả</li>
+              <li data-topic="Chào hỏi">👋 Chào hỏi</li>
+              <li data-topic="Số đếm">🔢 Số đếm</li>
+              <li data-topic="Màu sắc">🎨 Màu sắc</li>
+              <li data-topic="Cảm xúc">😊 Cảm xúc</li>
+              <li data-topic="Gia đình">👨‍👩‍👧‍👦 Gia đình</li>
+              <li data-topic="Trường học">🏫 Trường học</li>
+            </ul>
+          </aside>
+
+          <section class="video-container" id="videoContainer">
+            <div class="video-card" data-topic="Chào hỏi">
+              <div class="video-thumbnail">
+                <video src="../videos/xin_chao.mp4" controls></video>
+              </div>
+              <div class="video-info">
+                <p><span class="icon">👋</span> Xin chào</p>
+              </div>
+            </div>
+
+            <div class="video-card" data-topic="Chào hỏi">
+              <div class="video-thumbnail">
+                <video src="../videos/tam_biet.mp4" controls></video>
+              </div>
+              <div class="video-info">
+                <p><span class="icon">👋</span> Tạm biệt</p>
+              </div>
+            </div>
+
+            <div class="video-card" data-topic="Cảm xúc">
+              <div class="video-thumbnail">
+                <video src="../videos/vui.mp4" controls></video>
+              </div>
+              <div class="video-info">
+                <p><span class="icon">😊</span> Vui</p>
+              </div>
+            </div>
+
+            <div class="video-card" data-topic="Gia đình">
+              <div class="video-thumbnail">
+                <video src="../videos/cha.mp4" controls></video>
+              </div>
+              <div class="video-info">
+                <p><span class="icon">👨‍👩‍👦</span> Cha</p>
+              </div>
+            </div>
+
+            <!-- Thêm video khác nếu cần -->
+          </section>
+        </div>
       </div>
     </main>
 
     <footer class="footer" id="footer"></footer>
-    <!-- SCRIPT -->
-    <script src="../js/script.js"></script>
+    <script>
+      function loadComponent(id, file) {
+        fetch(file)
+          .then((res) => res.text())
+          .then((data) => {
+            document.getElementById(id).innerHTML = data;
+          });
+      }
+
+      // Load header và footer
+      loadComponent("header", "header.html");
+      loadComponent("footer", "footer.html");
+
+      // Lọc theo chủ đề
+      document.querySelectorAll("#filterList li").forEach((item) => {
+        item.addEventListener("click", () => {
+          const topic = item.getAttribute("data-topic");
+          document.querySelectorAll(".video-card").forEach((card) => {
+            if (topic === "all" || card.getAttribute("data-topic") === topic) {
+              card.classList.remove("hidden");
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+        });
+      });
+
+      // Tìm kiếm theo từ khóa
+      document
+        .getElementById("searchInput")
+        .addEventListener("input", function () {
+          const keyword = this.value.toLowerCase();
+          document.querySelectorAll(".video-card").forEach((card) => {
+            const text = card.innerText.toLowerCase();
+            card.classList.toggle("hidden", !text.includes(keyword));
+          });
+        });
+    </script>
   </body>
 </html>
